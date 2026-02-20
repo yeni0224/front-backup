@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>division</title>
+    <style> /*스타일을 적용하는 css*/
+        div, span{border: 1px solid blue;}
+    </style>
+</head>
+ 
+<body>
+    <!--
+    element를 그룹화(묶어주는 역할)
+    - span : inline 요소. 줄바꿈 없이 텍스트의 일부 등 작은 영역 지정시 사용
+    - div : block 요소. 관련있는 태그들을 묶어주는 용도(논리적 영역 나누기)
+            레이아웃 구조를 잡을 때 사용    
+    -->
+    <div class="box">
+        <p>첫 번째 박스입니다.</p>
+        <text>div 태그의 height는 컨텐츠의 크기가 적용됩니다.</text><br>
+        <text>div 태그의 width는 한줄 전체가 적용됩니다.</text>
+    </div>
+ 
+    <div class="box">
+        두 번째 박스입니다.
+    </div>
+    <p><!--span 태그로 영역을 나누었다-->
+        오늘은 <span class="highlight" style="color:red;">중요한 발표</span>가 있습니다.
+    </p>
+ 
+</body>
+ 
+</html>

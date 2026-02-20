@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 옵션 중에 선택2</title>
+</head>
+<body>
+    <form action="complete.html">
+        <select name="class">
+            <optgroup label="공과대학">
+                <option value="computer">컴퓨터 공학</option>
+                <option value="chemical">화학 공학</option>
+                <option value="elec">전자 공학</option>
+            </optgroup>
+            <optgroup label="문과대학">
+                <option value="kor">국문학</option>
+                <option value="history">사학</option>
+            </optgroup>
+        </select>
+        <hr>
+        <p>좋아하는 고양이과 동물</p>
+        <input type="text" name="cat" list="cats">
+        <datalist id="cats">
+            <option value="고양이">고양이</option>
+            <option value="호랑이">호랑이</option>
+            <option value="사자">사자</option>
+        </datalist>
+
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>

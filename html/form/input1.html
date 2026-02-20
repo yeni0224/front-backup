@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <form method="get" name="myform" action="complete.html">
+        <input name="input1" placeholder="힌트" required><br> <!--기본 input 타입 : text-->
+        <input type="text" name="input2" value="기본값" readonly><br><!--처음부터 이 값이 보였으면 할 때-->
+        <input type="password" name="input3"><br>
+        <!--클라에게 보이지 않음, 값은 보이지 않지만 전송 시 데이터가 보인다.
+        type이 hidden인 경우 name, value를 반드시 지정해야한다-->
+        <input type="hidden" name="hidden" value="보이지 않는 값">
+        <input type="color" name="color"><br>
+        <input type="search" name="search">
+        <fieldset>
+            <legend>연락처</legend>
+            email <input type="email" name="email"><br>
+            <!--정규표현식을 이용한 형식 지정, title 이용하여 tool tip 작성-->
+            phone <input type="tel" name="phone" pattern="010-\d{4}-\d{4}" placeholder="010-####-####" title="010-####-####"><br>
+            blog <input type="url" name="blog">
+        </fieldset>
+            <fieldset>
+            <legend>날짜</legend>
+            <input type="date" name="date" value="2026-02-01" max="2026-02-25"><br>
+            <input type="datetime-local" name="datetime"><br>
+            <input type="time" name="time"><br>
+            <input type="month" name="month"><br>
+            <input type="week" name="week"><br>
+        </fieldset>
+        <fieldset>
+            <legend>숫자</legend>
+            <input type="number" name="size" min="85" max="120" step="5">
+            <input type="range" name="range" min="1" max="10">
+        </fieldset>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>

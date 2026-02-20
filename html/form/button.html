@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+</head>
+<body>
+    <form action="complete.html">
+        <input name="t1">
+        <input name="t2" value="기본값"><br>
+        <input type="submit" value="전송버튼">
+        <!--값을 입력하기 전 초기 상태로 되돌아감-->
+        <input type="reset" value="초기화 버튼">
+        <!--click 이벤트 발생시 연결한 script 함수가 동작-->
+        <input type="button" value="동작 지정 버튼" onclick="alert('alert창 출력')">
+        <!--submit과 동일한 기능 + 이미지 추가, 버튼 클릭 좌표도 보내진다-->
+        <input type="image" src="img/login.png" alt="전송 이미지 버튼">
+        <br>
+        <button>전송 버튼</button><!--form안에서 type없이 <button>생성:submit-->
+        <button type="reset">초기화 버튼</button>
+        <button type="submit">전송 버튼2</button>
+        <button type="button" onclick="alert('버튼이 눌렸습니다')">일반 버튼</button>
+    </form>
+    <button onclick="alert('버튼눌림')">버튼2</button><!--form밖의 일반 버튼, 동작 명시 필요-->
+</body>
+</html>

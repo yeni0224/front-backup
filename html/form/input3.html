@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" name="myform" action="complete.html">
+        <!--파일의 내용과 정보를 모두 전송
+        <form method="post" name="myform" action="complete.html" enctype="multipart/form-data">-->
+        <input type="file" name="file"><br>
+            <!--image/* : type상관없이 이미지면 된다는 뜻(MIME)-->
+        <input type="file" name="file" accept="image/*"><br>
+                                            <!--png만 선택-->
+        <input type="file" name="file" accept="image/png"><br>
+        <input type="submit" value="검색">
+    </form>
+</body>
+</html>

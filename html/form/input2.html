@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여러 옵션 중에 선택1</title>
+</head>
+<body>
+    <form method="get" action="complete.html">
+        <p>체크박스 - 좋아하는 동물<br>
+        <label for="cat">cat</label>
+        <input type="checkbox" name="animal" value="cat" id="cat">
+        <label for="dog">dog</label>
+        <input type="checkbox" name="animal" value="dog" id="dog" checked>
+        <label for="rabbit">rabbit</label>
+        <input type="checkbox" name="animal" value="rabbit" id="rabbit">
+        <label for="panda">panda</label>
+        <input type="checkbox" name="animal" value="panda" id="panda">
+        </p>
+        <p>라디오 버튼<br>
+            <input type="radio" name="gender" value="male" id="male">
+            <label for="male">남자</label>
+            <input type="radio" name="gender" value="female" id="female">
+            <label for="female">여자</label> 
+            <input type="radio" name="animal" value="dog" id="doggie">
+            <label for="doggie">개</label>
+        </p>
+        <input type="submit" value="전송">
+    </form>
+</body>
+</html>

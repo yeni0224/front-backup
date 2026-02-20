@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="complete.html">
+        <textarea name="memo">간단한 메모를 남겨주새요/</textarea><br>
+        <textarea name="memo"></textarea>
+    </form>
+    <form>
+        <!-- 기본 textarea -->
+        <label for="msg">메시지:</label><br>
+        <textarea id="msg" name="message"></textarea>
+
+        <br><br>
+
+        <!-- 행과 열 지정 -->
+        <label for="feedback">피드백:</label><br>
+        <textarea id="feedback" name="feedback" rows="4" cols="40">
+        여기에 기본 텍스트를 넣을 수도 있습니다.
+  </textarea>
+
+        <br><br>
+
+        <!-- 읽기 전용 -->
+        <label for="readonly">읽기 전용:</label><br>
+        <textarea id="readonly" name="readonly" rows="3" cols="30" readonly>
+        이 텍스트는 수정할 수 없습니다.
+  </textarea>
+
+        <br><br>
+
+        <!-- 비활성화 -->
+        <label for="disabled">비활성화:</label><br>
+        <textarea id="disabled" name="disabled" rows="3" cols="30" disabled>
+        이 텍스트 영역은 아예 입력 불가 상태입니다.
+  </textarea>
+    </form>
+
+</body>
+
+</html>
