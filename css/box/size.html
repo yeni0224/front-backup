@@ -9,11 +9,13 @@
         #a{display: none;}/*width:0,height:0*/
         /*.inline{display: inline;}*//*inline요소의 크기->컨텐츠 크기. w,h적용안됨*/
         .inline{display: inline-block;}
+        /*.tc{display:inline-block;}*/
+        .tc{display:table-cell;}/*표에서 하나의 셀로 표현*/
     </style>
 </head>
 <body>
-    <div id="a">TEST</div>
-    <div class="inline">1-1</div>
-    <div class="inline">2-2</div>
+    <div id="a" class="tc">TEST</div>
+    <div class="tc">1-1</div>
+    <div class="tc">2-2</div>
 </body>
 </html>
