@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style1{
+            border:1px solid blue;
+            line-height: 50px;
+            word-spacing:20px;}
+        .style2{
+            border:1px solid blue;
+            line-height: 50px;
+            letter-spacing:20px;}
+        .style3{
+            border:1px solid blue;
+            width:200px;
+            white-space: nowrap;/*줄 안바꾸고 텍스트가 영역 밖으로*/
+            overflow: hidden;/*영역을 넘어가는 부분은 감춤*/
+            text-overflow: ellipsis;/*영역을 넘어가는 부분은 말 줄임 효과(....)*/
+        }
+    </style>
+</head>
+<body>
+    <p>군사법원의 조직·권한 및 <br>재판관의 자격은 법률로 정한다. 예비...</p>
+    <p class="style1">모든 국민은 종교의 자유를 가진다.<br> 국가안전보장회의는 대통령...</p>
+    <p class="style2">헌법재판소의 조직과 운영<br> 기타 필요한 사항은 법률로 정한다....</p>
+    <p class="style3">헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다....</p>
+</body>
+</html>

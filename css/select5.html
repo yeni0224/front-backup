@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link{color: crimson;} /*링크 걸려있고 방문 기록 없는 상태*/
+        a:active{color: blueviolet; font-size: large;}/*누르고있는 시점에 색,크기 변경*/
+        a:visited{color: blue;}/*링크 걸려있고 방문기록 있는 상태*/
+        a:hover{color: navy; text-decoration:none}
+        div{width:30px; height:30px; background-color: green;}
+        div:hover{width:60px;height:60px;background-color:greenyellow;}
+    </style>
+</head>
+<body>
+    <a href="#">태그 상태에 따라 스타일을 다르게 지정할 수 있다</a>
+    <div></div><!--콘텐츠가 없기에 크기는 0, 크키 style에서 지정-->
+</body>
+</html>

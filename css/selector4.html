@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*형제 태그 : 같은 레벨로 선언된 태그*/
+        #first #target + li {color: darkgreen;}/*바로 아래에 위치한 형제태그*/
+        #second #target ~ li {color: darkorange;}/*아래에 있는 모든 형제태그*/
+    </style>
+</head>
+<body>
+    <ul id="first">
+        <li id="target">TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+    </ul>
+    <ul id="second">
+        <li id="target">TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+    </ul>
+</body>
+</html>

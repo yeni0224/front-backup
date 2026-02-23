@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*부모, 자식, 자손*/
+        li strong{color: tomato;}/*자손 태그 찾기(body, ul 까지 안적어도 됨)*/
+        ul li > strong{color: teal;}/*자식 태그만*/
+        li > * {background-color: sandybrown;}/*모든 자식 태그*/
+
+        p .test{color: blue;}/*p태그 자손 태그 중 class가 test인 태그*/
+        p.test{color: coral;}/*p태그 중에서 class가 test인 태그*/
+        
+        /*형제 태그 : 같은 레벨로 선언된 태그*/
+        #first #target + li {color: darkgreen;}/*바로 아래에 위치한 형제태그*/
+        #second #target ~ li {color: darkorange;}/*아래에 있는 모든 형제태그*/
+    </style>
+</head>
+<body>
+    <p><span class="test">test</span> test test test</p>
+    <p class="test">test test test test</p>
+    <ul>
+        <li>TEXT <strong>TEXT TEXT</strong> TEXT TEXT TEXT</li>
+        <li>TEXT <span><strong>TEXT TEXT</strong></span> TEXT TEXT TEXT</li>
+    </ul>
+    <ul id="first">
+        <li id="target">TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+    </ul>
+    <ul id="second">
+        <li id="target">TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+        <li>TEXT TEXT TEXT TEXT TEXT TEXT</li>
+    </ul>
+</body>
+</html>

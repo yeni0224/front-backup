@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        ul {
+            list-style: none; /*불릿 제거*/
+            text-align: center;
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+            padding: 10px 0;/*양 가로 10px, 세로 0px*/
+        }
+ 
+        ul li {
+            display: inline;/*block태그를 inline태그로*/
+            text-transform: uppercase;
+            padding: 0 10px;
+            letter-spacing: 10px;
+        }
+ 
+        ul li a { /*a태그에 적용*/
+            text-decoration: none;/*기본 상태, 밑줄 없음*/
+            color: black;
+        }
+ 
+        ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+ 
+<body>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</body>
+ 
+</html>
