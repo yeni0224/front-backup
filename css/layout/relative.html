@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one {
+            background-color: cyan;
+            width: 200px;
+            height: 50px;
+        }
+ 
+        #two {
+            position:relative;/*원래 나와야 하는 위치를 기준으로*/
+            left:30px;/*왼쪽에서 오른쪽으로 30px 들어감*/
+            top:20px;/*위에서 아래로 20px 들어감*/
+            background-color: yellow;
+            width: 200px;
+            height: 50px;
+        }
+ 
+        #three {
+            background-color: lightgreen;
+            width: 200px;
+            height: 50px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <p id="one">block #1</p>
+    <div id="two">
+        block #2<br />
+        position:relative;<br />
+    </div>
+    <p id="three">block #3</p>
+</body>
+ 
+</html>
