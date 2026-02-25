@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function power(x){return x * x;} //변수 : 익명 함수
+        let result = power(10);
+        document.write(power(10, 15))
+
+        let sayhi = function(){alert('hi!')} //무기명 함수
+        sayhi(); //함수 호출
+
+        let greet = sayhi; //함수 객체를 변수에 저장
+        greet(); // 함수 호출
+        
+        alert(sayhi);
+
+        let add = function plus(x,y){return x+y;}
+        add(1,2);
+        plus(3,4); //Uncaught ReferenceError: plus is not defined
+        //함수를 변수에 담아쓰는 경우에만 해당하는 에러
+        //plus라는 이름은 함수 본문 안에서 자기 자신을 재귀 호출할 때만 사용할 수 있고, 바깥 스코프에서는 전혀 인식되지 않습니다.
+    </script>
+</body>
+</html>

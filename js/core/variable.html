@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>변수는 하나의 값을 저장하는 공간</p>
+    <script>
+        let user="김파이썬";
+        user="scripts"
+        console.log(`user : ${user}`);
+
+        let n1 = '100';
+        let n2 = 100;
+        let n3 = '백';
+        document.write(n1+n2 + '<br>')
+        document.write(`n1 + n2 = ${n1+n2}<br>`)
+        document.write(`n1 + n3 = ${n1+n3}<br>`)
+        document.write(`n2 + n3 = ${Number(n2+n3)}<br>`)
+        document.write(`Number(n2) + n3 = ${Number(n2)+n3}<br>`)
+        document.write(`Number(n3) = ${Number(n3)}<br>`)
+        document.write(100/0.0 + '<br>')
+    </script>
+    <p>undefined가 발생하는 경우</p>
+    <script>
+        let num = 10;
+        document.write(`${num}:${typeof num} <br><br>`)
+        //1. 변수를 초기화하지 않고 사용
+        let x;
+        document.write(`${x}:${typeof x} <br>`)
+        x = null;
+        document.write(`${x}:${typeof x} <br>`)
+        //2. 객체(이름이 있는 값들의 모음) 내에 없는 속성을 찾을 때
+        let obj = {a:1, b:2, c:3};
+        document.write(`obj.d :${obj.d} <br>`)
+        //3. 배열 범위를 넘어서는 값을 출력
+        let array = [1,2,3];
+        document.write(`array[3] :${array[3]} <br>`)
+        //4. 함수의 매개변수에 값이 전달되지 않음
+        function func(y){document.write(`y : ${y}<br>`)}
+        func(10)
+        func()
+
+        //5. 리턴값이 없는 함수 결과 출력
+        document.write(func())
+        document.write('<br><br><br>')
+
+        let s = "";
+        document.write(`s = ""<br>`)
+        if(s){document.write('true일 때 수행할 문장');}
+        else{document.write('false일 때 수행할 문장');}
+        document.write('<br><br>')
+
+        s = 0
+        document.write(`s = "false"<br>`)
+        if(s){document.write('true일 때 수행할 문장');}
+        else{document.write('false일 때 수행할 문장');}
+
+        document.write('<br><br><br>')
+        document.write(`10 + '10' = ${10 + '10'} <br>`)
+        document.write(`10 - '10' = ${10 - '10'} <br>`)
+        document.write(`10 * '10' = ${10 * '10'} <br>`)
+        document.write(`10 / '10' = ${10 / '10'} <br>`)
+        document.write(`10 % '10' = ${10 % '10'} <br><br>`)
+ 
+        document.write(`8 < 11 = ${8 < 11} <br>`)
+        document.write(`'8' < '11' = ${'8' < '11'} <br>`)
+        document.write(`'8' < 11 = ${'8' < 11} <br>`)
+        document.write(`8 < '11' = ${8 < '11'} <br>`)
+        document.write(`8 < '11A' = ${8 < '11A'} <br>`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let scope = "global"; //전역
+        function checkscope() {
+            scope = "local";//전역
+            document.write(scope + "<br>");
+            myscope = "mylocal";//let, var 없이 변수 선언 -> 전역 변수
+            document.write(myscope + "<br>");
+        }
+        checkscope();
+        document.write("<br>");
+        document.write(scope + "<br>");
+        document.write(myscope + "<br>");
+    </script>
+</body>
+
+</html>

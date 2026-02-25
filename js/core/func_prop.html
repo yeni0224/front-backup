@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>함수에 전달된 값을 출력한다.</p>
+    <script>
+        function list(){
+            for(let i = 0; i < list.arguments.length; i++){
+                document.write(list.arguments[i]+"<br>");
+            }
+        }
+        list(1, 'apple', 'banana', true);
+        document.write("<br>");
+        document.write(list.name); //함수 객체.프로퍼티명
+    </script>
+</body>
+</html>

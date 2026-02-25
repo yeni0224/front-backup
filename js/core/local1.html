@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역변수</title>
+</head>
+<body>
+    <script>
+        let scope = "global"; //전역변수
+        function checkscope(){
+            let scope = "local";//지역변수
+            document.write(scope + "<br>");//지역변수 우선권
+        }
+        checkscope();
+        document.write("<br>");
+        document.write(scope + "<br>");//전역변수
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let scope = "global";
+        function checkscope(){
+            let scope = "local";
+            function nested(){
+                let scope = "nest";
+                document.write(scope+"<br>");
+            }
+            nested();
+            document.write(scope+"<br>");
+        }
+        checkscope();
+        document.write(scope+"<br>");
+       //nested()
+    </script>
+</body>
+</html>

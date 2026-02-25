@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //isNaN()
+        document.write(isNaN('100')+'<br>'); //false 여야 숫자가 될 수 있다.
+        document.write(isNaN(100)+'<br>'); //false
+        document.write(isNaN('ABC'+'<br>')); //true
+        document.write(isNaN("")+'<br>'); //false 빈문자열을 0이 된다.
+        //isFinite()
+        let num = prompt('숫자 입력');
+        document.write(`${num} : ${isFinite(num)}<br>`);
+        if(isFinite(num)){document.write(parseInt(num));}
+        document.write('<br><br>')
+        //eval()
+        document.write('3+8'+'<br>');
+        document.write(eval('3+8')+'<br>');
+
+        let data = 'false';
+        if(eval(data)){document.write('data == true');}
+        else{document.write('data == false');}
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrow function 화살표 함수</title>
+</head>
+<body>
+    <script>
+        //let 함수명 = (p1,p2)=>{수행문;}
+        let func1 = a => a * 2; //매개변수 1개는 소괄호 생략 가능
+        let func2 = () => 0; //매개변수가 없거나 여러 개라면 소괄호 반드시 명시해야함
+                            //수행문 한줄->{} 중략
+        let func3 = (a, b) => a + b; // 리턴문만 있다면 return 생략 가능
+        let func4 = (a, b) => { //함수가 여러줄일 때는 {}로 묶어줌
+            if (a > b) {
+                return a;
+            } else {
+                return b;
+            }
+};
+
+        document.write(`func1(3) : ${func1(3)}<br>`);
+        document.write(`func2() : ${func2()}<br>`);
+        document.write(`func3(4, 5) : ${func3(4, 5)}<br>`);
+        document.write(`func4(6, 7) : ${func4(6, 7)}<br>`);
+
+        (function(){console.log(new Date())})();
+
+        let x = 10;
+        test();
+ 
+        function test(){
+            alert(x);
+            alert(y);
+            var y = 20;
+        }
+
+    </script>
+</body>
+</html>
