@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = ['apple', 'banana', 'mango'];
+        for(const index in fruits){//배열인 경우 인덱스를 가져옴
+            document.write(`${index} : ${fruits[index]}<br>`)
+        }
+        document.write('--------------------------------<br>')
+        // for ...of : object는 불가능하다.
+        for(const value of fruits){ //값을 직접 가져옴
+            document.write(`${value}<br>`)
+        }
+    </script>
+</body>
+</html>

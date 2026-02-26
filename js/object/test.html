@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문제 1
+        let student = {name : '차무희', age : 31, major : '영상학'}
+        var {name, major} = student;
+        document.write(`이름 : ${name}, major : ${major}<br><br>`)
+  
+        //문제 2
+        let product = {id :'01A',name:'apple',price:1000};
+        for(let key in product){document.write(`key:${key} , value:${product[key]}<br>`)}
+        var {id = '*',name = productName, price = '*', discount = 0} = product;
+        product.discount = 0; //객체에 프로퍼티 추가
+        for(let key in product){document.write(`key:${key} , value:${product[key]}<br>`)}
+        document.write('<br><br>')
+        
+        //문제 3
+        const user = {id:1, profile:{nickname:"dev_kim",email:["kim@test.com", 'park@test.com']}};
+        document.write(user.profile.nickname)
+        document.write('<br><br>')
+        //구조분해로 프로퍼티 꺼내오기
+        var{profile:{nickname,email}} = user;
+        document.write(`nickname : ${nickname}, email : ${email}<br>`)
+        document.write(email[1])
+        document.write('<br><br>')
+
+        //문제 4
+        const order = {orderid:1001,items:[{name:"Mouse",price:30000},
+            {name:"Keyboard",price:50000}]};
+        //orderid 구조분해
+        var {orderid}=order;
+        document.write(orderid)
+        document.write('<br>')
+        //첫번재 상품의 name과 price 구조분해 출력
+        var {items:[{name, price}]} = order;
+        document.write(`name : ${name}, price : ${price}<br>`)
+
+        //문제 5
+        const response = {status:200, data:{title:"hello",writer:"kim",views:20}}
+        //title, writer, views를 한번에 구조분해로 출력
+        let {data:{title, writer, views}}=response;
+        document.write(`title : ${title}, writer : ${writer}, views : ${views}`)
+    </script>
+</body>
+</html>

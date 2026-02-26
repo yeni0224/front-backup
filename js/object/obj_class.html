@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체를 만드는 틀 : class를 선언
+        class Fruit{
+            //프로퍼티 선언(생성자)
+            constructor(n,p){
+                this.name = n; //name프로퍼티
+                this.price = p; //price프로퍼티
+            }
+            //메서드 선언
+            //calcPrice = function(count=0){return count * this.price;}
+        }
+        //프로토 타입
+        Fruit.prototype.calcPrice = function(count=0){return count * this.price;};
+        
+
+        //객체 생성
+        let banana = new Fruit('바나나',1000);
+        document.write(banana.name + ' 5개' + banana.calcPrice(5)+'원'+'<br>')
+        let mango = new Fruit('망고',4000)
+        document.write(`${mango.name} 4개는 ${mango.calcPrice(4)}원<br>`)
+        let count = parseInt(prompt('몇개 주문? : '))
+        document.write(mango.name + count + '개 : '+mango.calcPrice(count)+'원')
+    </script>
+</body>
+</html>

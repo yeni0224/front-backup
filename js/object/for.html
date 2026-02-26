@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //지정한 횟수만큼 반복
+        for(let i = 0; i < 10; i++){
+            document.writeln(i) //ln은 줄바꿈,html에서 동작중이므로 한 칸 공백 발생
+        }
+         document.write("<br><br>")
+        //인스턴스에 저장된 모든 프로퍼티 출력
+        let obj = {name:'kim', age:20, gender:'male'}
+        for (let p in obj){ //프로퍼티 이름 저장
+             document.writeln(`${p} : ${obj[p]}`)
+        }
+        document.write("<br><br>")
+        //배열에 저장된 모든 데이터 출력
+        let arr = ['a','bc','def']
+        for (let index in arr){ //인덱스(번호)를 저장
+             document.writeln(`${index} : ${arr[index]}`)
+        }
+    </script>
+</body>
+</html>

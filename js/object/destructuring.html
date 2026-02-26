@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*객체 구조 분해*/
+        let user = {name : 'kim', age : 28, job : 'developer'};
+        var {name, job} = user;
+        console.log(name);
+        console.log(job);
+
+        /*다른 이름으로 사용하고 싶다면
+        프로퍼티 값은 그대로 가져오되, 변수의 이름을 바꾼 것*/
+        var {name:userName, job:userJob} = user;
+                console.log(userName); //
+        console.log(userJob);  //
+        console.log(user.userName);
+ 
+        /*기본값 설정*/
+        //name 값이 있으면 그 값을 사용, hobby 값이 없으면 현재 지정한 값으로 기본 설정
+        var { name = '*', hobby = "Reading" } = user;
+        console.log(name);
+        console.log(hobby);
+ 
+        /*배열도 구조 분해가 가능*/
+        const colors = ["red", "green", "blue"];
+ 
+        var [first, second] = colors;
+ 
+        console.log(first);  //
+        console.log(second); //
+ 
+        /* 일부만 가져오기*/
+        var [, , third] = colors;
+        console.log(third); //
+ 
+        /*할당되고 남은 나머지 한번에 배열로 가져오기*/
+        var numbers = [1, 2, 3, 4, 5];
+ 
+        var [one, two, ...rest] = numbers;
+        console.log(one);   // 1
+        console.log(rest);  // [3, 4, 5]
+ 
+        /*함수 매개변수에서 구조 분해 */
+        function printUser({ name, age }) {
+            console.log(`${name} is ${age} years old.`);
+        }
+ 
+        printUser({
+            name: "kim",
+            age: 28
+        });
+    </script>
+</body>
+</html>

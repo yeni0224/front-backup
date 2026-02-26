@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {name : '이름', age : 23}
+        document.write(user) //object
+        document.write(typeof user); //[object Object]-object를 직접 출력하지 않음
+        console.log(user)
+
+        document.write('<br><br>')
+        //프로퍼티 읽기
+        document.write(`${user.name}<br>`)
+        document.write(`${user['age']}<br>`)
+        let n = 'name'
+        document.write(`${user[n]}<br>`)//['문자열'],[변수명]
+        document.write('<br><br>')
+
+        //프로퍼티 갱신(값 변경)
+        user.name = '강MS'
+        document.write(`이름 변경 : ${user.name}<br>`)
+        user.name = '박MS'
+        document.write(`이름 변경2 : ${user.name}<br>`)
+        document.write('<br><br>')
+
+        //프로퍼티 추가(새로운 값)
+        user.job = 'programmer';
+        document.write(`job 추가: ${user.job}<br>`)
+        document.write('<br><br>')
+
+        //for..in문을 사용한 프로퍼티 읽기
+        //프로퍼티의 이름을 문자열로 꺼내옴
+        for(let prop in user){
+            document.write(`${prop},${typeof prop}<br>`)
+            document.write(user[prop])
+            document.write("<br>")
+        }
+        document.write('<br><br>')
+
+        //프로퍼티 삭제
+        delete user.job;
+        document.write(`job 삭제:${user.job}<br>`)
+
+    </script>
+</body>
+</html>

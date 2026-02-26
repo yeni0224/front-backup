@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let banana = {name:'바나나',price:1200,
+            calcPrice : function(count = 0){return count * this.price}}//메서드 생성
+        //리터럴 방식에서 화살표 함수 사용 가능, this 사용 불가
+        let melon = {name:'메론',price:10000,
+        //calcPrice : function(count = 0){return count * this.price}
+            calcPrice:count =>count * melon.price
+        }
+        
+        document.write(`${banana.name} 3개의 가격 : ${banana.calcPrice(3)}원`)
+        document.write('<br>')
+        document.write(`${melon.name} 3개의 가격 : ${melon.calcPrice(3)}원`)
+    </script>
+</body>
+</html>

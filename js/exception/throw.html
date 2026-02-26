@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강제 예외 발생</title>
+</head>
+<body>
+    <script>
+        try{
+        let user = {name : 'John'};
+        document.write(user.name);
+        document.write(user.age);
+        document.write('<br>')
+        if(user.age){document.write(user.age)}
+        else{throw new Error('age 프로퍼티 없음')}
+        }//throw를 포함한 모든 문장에서 예외가 발생할 수 있으므로 전체를 try catch로 묶는다
+        catch(e){
+            alert(e)
+            document.write(e.message + '<br>')
+        }
+    </script>
+</body>
+</html>

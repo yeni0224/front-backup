@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //생성자 함수로 객체 생성하기
+        function Car(model){
+            //프로퍼티 선언
+            this.model = model;
+            this.speed = 0;
+
+            //메서드 선언
+            //this.accel = (s) => this.speed += s;
+            //this.brake = () =>this.speed -= 10;
+        }
+        //프로토타입
+        Car.prototype.brake = function(){this.speed -= 10;}
+        Car.prototype.accel = function(s){this.speed += s;}
+
+        //객체 생성
+        let mycar = new Car('사이버트럭')
+        document.write(mycar.model+'<br>')
+        document.write(`현재 속도 : ${mycar.speed}m/s`)
+        mycar.accel(50)
+        document.write(`50 밟은 현재 속도 : ${mycar.speed}m/s<br>`)
+        mycar.accel(20)
+        document.write(`20 더 밟은 속도 : ${mycar.speed}m/s<br>`)
+        mycar.brake()
+        document.write(`브레이크 밟았음 현재 속도 : ${mycar.speed}m/s<br>`)
+        console.log(mycar)
+    </script>
+</body>
+</html>
