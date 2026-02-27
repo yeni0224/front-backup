@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문자열.match(/패턴-정규표현식/옵션)
+        //패턴에 일치하는 문자열을 찾아서 반환
+        //i : (insensitive) 대소문자 구별하지 않음
+        //g : globally 전체 다
+        const str = 'Like father, like son. like lila lated';
+        result = str.match(/like/ig);
+        document.write(result);
+        document.write('<br><br>');
+        result2 = str.match(/li.{2}/ig);
+        document.write(result2);
+        result3 = str.match(/zzz/ig)
+        if(!result3){document.write(result3 + '일치하는 값 없음')}
+    </script>
+</body>
+</html>

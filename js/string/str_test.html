@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="id" placeholder="아이디 입력">
+    <span id="msg">한글 입력 안됨</span>
+    <button type="button" onclick="checkKorean()">확인</button>
+    <script>
+        //패턴.test(문자열)
+        //패턴에 맞는 문자열인 경우 true, 아니면 false 반환
+        function checkKorean(){
+            let patt = /[ㄱ-ㅎㅏ-ㅣ가-힣]/g;
+            //현재 문서에서 아이디가 'id'인 태그에 입력한 값을 저장
+            let value = document.getElementById('id').value;
+            let result = patt.test(value);
+            
+            if(result){
+                document.getElementById('id').value = '';
+                document.getElementById('msg').style.color = 'red';
+            }
+            else{document.getElementById('msg').style.color = 'black';}
+        }
+        
+
+    </script>
+</body>
+</html>

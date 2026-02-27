@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function checkSpam(str){
+            let lowerStr = str.toLowerCase();
+            //viagra 혹은 x가 두개 이상 연속으로 나오는 경우 스팸이라고 출력한다.
+            let patt1 = /viagra|x{2,}/ig;
+            if(patt1.test(lowerStr)) {return str + 'is a spam!!'}
+            else {return str}
+        }
+
+        function checkSpam2(str){
+            let lowerStr = str.toLowerCase();
+            if(lowerStr.includes('viagra') ||  lowerStr.includes('xx')){return str + 'is a spam!!'}
+            else {return str}
+        }
+
+        alert(checkSpam2("free xxxx"))
+        alert(checkSpam2("viagra ..."))
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [1,2,3,4,5]
+        //배열에 데이터 추가
+        numbers.push(6)
+        document.write(numbers + '<br>')
+
+        //배열 데이터 꺼내기
+        let item = numbers.pop();
+        document.write(`item : ${item}<br>`)
+        document.write(`pop after : ${numbers}<br>`)
+        document.write(`<br>`)
+
+        let item2 = numbers.shift();
+        document.write(`item2 : ${item2}<br>`)
+        document.write(`shift after : ${numbers}<br>`)
+        document.write(`<br>`)
+
+        let item3 = numbers[0];
+        document.write(`item3 : ${item3}<br>`)
+        document.write(`get numbers[0] : ${numbers}<br>`)
+        document.write(`<br>`)
+
+    </script>
+</body>
+</html>

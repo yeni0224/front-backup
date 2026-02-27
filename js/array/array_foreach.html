@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>배열의 모든 요소에 똑같은 작업 수행 (반복)</p>
+    <script>
+        let arr = [52,273,32,64,72]
+        //forEach : 배열의 요소를 하나씩 뽑아 반복처리(함수)
+        arr.forEach(function(item, index){
+            document.write(`${index + 1}번째 요소는 ${item}입니다<br>`)//반환 값 없음
+        })
+        document.write('<br>');
+        arr.forEach(item=>document.write(`${item}의 제곱은 ${item*item}입니다.<br>`))
+        //map : 배열의 요소를 하나씩 뽑아 반복하면서 콜백함수가 리턴하는 값으로 새로운 배열 생성
+        let output = arr.map(function(item, index){return item * index;})
+        let output2 = arr.map((item,index)=>item * index)
+    </script>
+</body>
+</html>

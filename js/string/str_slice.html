@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문자열 추출
+        let str = 'javascript';
+        //인덱스 번호로 문자열 추출 - substr(), slice()
+        document.write(str.slice(0,4) + '<br>')//0부터 4번째까지 java
+        document.write(str.slice(4) + '<br>')//4번째부터 끝까지 script
+        document.write(str.substring(4) + '<br>')//script
+
+        //slice()는 음수 인덱스 가능
+        document.write(str.slice(-4,-1)+ '<br>')//rip
+        //substring() 음수 인덱스 불가능, 0으로 처리
+        document.write(str.substring(-4,-1)+ '<br>')//아무것도 나오지 않음
+        //            start보다 end가 크면 두 자리를 바꿔서 연산
+        document.write(str.substring(6,2)+ '<br>')//vasc
+        //slice()는 앞의 값이 크면 빈문자열 반환
+        document.write(str.slice(6,2)+ '<br>')
+        //substr(start, length)start부터 length개 반환
+        document.write(str.substr(2,4)+ '<br>')//vasc
+        //뒤에서 start번째 부터 length만큼, 두번째 자리는 음수 들어가면 안됨
+        document.write(str.substr(-6,6)+ '<br>')//script
+    </script>
+</body>
+</html>

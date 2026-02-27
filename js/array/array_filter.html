@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [10,20,30,40,50];
+        //필터의 기준이 되는 콜백함수 (true,false)
+        function isBigEnough(element, index, array){return (element >= 30);}
+
+        //배열 요소 한개씩 꺼내서 콜백 함수 호출
+        //콜백함수에서 true를 리턴하는 요소만으로 배열 생성
+        let filtered = numbers.filter(isBigEnough);
+        document.write(filtered);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let s = 'aBcDeF';
+        let result1 = s.toUpperCase();
+        let result2 = s.toLowerCase();
+ 
+        document.write(`${s} / ${result1} / ${result2} <br><br>`)
+ 
+        let s1 = "문자열 1 ";
+        let s2 = "문자열 2";
+        document.write(s1.concat(s2)+"<br><br>");
+ 
+        let s3 = "자바스크립트에 오신 것을 환영합니다.";
+        let n = s3.indexOf("환장");
+        document.write('환영 위치: '+n+"<br>");
+        n = s3.lastIndexOf(" ");
+        document.write('마지막 공백 위치: '+n+"<br>");
+        n = s3.lastIndexOf("A");
+        document.write('없는 글자 위치: '+n+"<br><br>");
+       
+        let s4 = "Hong's number is 123-5678. Hong";
+        result = s4.replace("Hong",'Kim');
+        document.write(s4+"<br>");
+        document.write(result+"<br><br>");
+    </script>
+</body>
+</html>

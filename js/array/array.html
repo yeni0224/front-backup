@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let myArray1 = new Array();
+        myArray1[0] = 'apple';
+        myArray1[1] = 'banana';
+        myArray1[10] = 'orrange';
+
+        function printArray(arr){
+            document.write('[')
+            document.write(arr)
+            document.write(']<br><br>')
+        }
+        printArray(myArray1);
+
+        let myArray3 = [];
+        myArray3['a'] = 'apple';
+        myArray3['b'] = 'mango';
+        myArray3[0] = 'fig';
+        myArray3[1] = 'pineapple';
+
+        for(let index in myArray3){
+            document.write(`${index} : ${myArray3[index]}<br>`)
+        }
+        document.write(`<br>`)
+        document.write(`${myArray3['a']}<br>`)
+    </script>
+</body>
+</html>
