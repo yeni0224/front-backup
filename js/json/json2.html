@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let banana = {name:'바나나', price:'1200', tax1:undefined, tax2:null,
+            calcPrice: function(count=0){
+                return count * this.price;
+            }
+        };
+    //function과 undefined는 JSON문자열로 만들어지지 않음.
+    let jsonText = JSON.stringify(banana);
+    document.write(jsonText);    
+    </script>
+</body>
+</html>

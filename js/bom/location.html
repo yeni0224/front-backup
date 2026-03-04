@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location</title>
+    <!--특정 시간이 지나면 자동으로 새로고침(페이지 이동)-->
+    <meta http-equiv="refresh" content="5"; url="https://www.google.com">
+</head>
+<body>
+    <button onclick="location.href='https://www.google.com'">페이지 이동</button>
+    <button onclick="locReplace()">페이지 이동2</button>
+    <script>
+        function locReplace(){location.replace('https://www.google.com')}
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //js object
+        const user = {name : "kim", age:10,isProgrammer:true};
+        //json문자열(text)
+        const jsonString = JSON.stringify(user);
+                    // = JSON.stringfy(user, null, 2);
+        document.write(jsonString);
+        document.write("<br>")
+        //js Object로 변경
+        const obj = JSON.parse(jsonString);
+        document.write(obj.name);
+        document.write("<br>")  
+        document.write(obj.age)
+    </script>
+</body>
+</html>

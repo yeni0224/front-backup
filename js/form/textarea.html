@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform1">
+        <textarea name="mail" rows="10" cols="65">여기는 편지 내용을 쓰는 곳임</textarea>
+        <p>
+            <input type="button" value="확인" onclick="check(this.form)">
+        </p>
+        <script> function check(form){
+            let content = form.mail.value; 
+            document.body.innerHTML += "<p>작성한 편지: " + content + "</p>"
+        }
+        </script>
+    </form>
+</body>
+</html>

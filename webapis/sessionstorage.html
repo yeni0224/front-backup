@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+sessionStorage.setItem("name","John Doe");
+document.getElementById("demo").innerHTML = sessionStorage.getItem("name");
+</script>
+
+</body>
+</html>
+<!-- 
+객체가 하나의 세션에 대한 데이터를 저장합니다.
+브라우저를 닫으면 데이터가 삭제됩니다.
+ -->

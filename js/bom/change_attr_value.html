@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 값 변경</title>
+</head>
+<body>
+    <img src="img/poodle.png" title="푸들" id="dog">
+    <script>
+        dog.onclick=()=>{
+            let path = document.querySelector('#dog').src; //속성값 꺼내기
+            if(path.includes('poodle')){
+            //태그.속성명 = 값 -> 넣어준 값으로 변경
+                document.querySelector('#dog').src='img/pome 1.png'
+                document.querySelector('#dog').title='포메'
+            } else{
+                document.querySelector('#dog').src='img/poodle.png';
+                document.querySelector('#dog').title='푸들';
+            }
+        }
+    </script>
+</body>
+</html>

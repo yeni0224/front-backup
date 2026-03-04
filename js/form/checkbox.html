@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform" action="nocation">
+        <h1>드라이브 선택</h1>
+        <p>
+            <input type="checkbox" name="drive" value="A"
+            onclick="clickCheck(this/*현재 태그 객체*/)">A 드라이브<br>
+            <input type="checkbox" name="drive" value="B" onclick="clickCheck(this)">B 드라이브<br>
+            <input type="checkbox" name="drive" value="C" onclick="clickCheck(this)">C 드라이브<br>
+            <input type="checkbox" name="drive" value="D" onclick="clickCheck(this)">D 드라이브<br>
+        </p>
+        <p><button type="button" onclick="checkedBox()">선택된 체크박스 확인하기</button></p>
+    </form>
+    <script>
+        function checkedBox(){
+            let boxes = document.myform.drive; //여러개 있으면 배열
+            //console.log(typeof boxes); -object
+            let ch = '';
+            for(let i = 0;i < boxes.length; i++){
+                if(boxes[i].checked){//하나만 가져오는 것이기 때문에 checked 사용 가능
+                    ch += boxes[i].value + '드라이브\n'
+                }
+            }
+            alert(ch);
+        }
+        function clickCheck(box){
+            if(box.checked){alert(box.value+'드라이브 선택')}
+            else{alert(box.value+'드라이브 선택 해제')}
+        }
+    </script>
+</body>
+</html>

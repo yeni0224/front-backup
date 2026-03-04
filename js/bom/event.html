@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><div> 이벤트 처리1: html태그 속성</div>
+    <input type="button" value="click" onclick="alert('클릭 이벤트 처리')"></p>
+    <p><div>이벤트 처리2 : DOM 프로퍼티</div>
+    <input type="button" value="click2" id="elem">
+    <script>
+        elem.ondblclick = function(e){alert(e.type);} //더블클릭 시 실행
+    </script>
+    </p>
+    <p><div>이벤트 처리3 : addEventListener</div>
+        <input type="button" value="click3" id="elem3">
+        <input type="button" value="click4" id="elem4">
+        <script>
+            //태그.addEventListener("이벤트", 이벤트가 발생했을 때 실행할 함수)
+            elem3.addEventListener('click', ()=>{alert('클릭 이벤트 처리3')})
+            function handler(){alert('클릭 이벤트 처리4')}
+            elem4.addEventListener('click',handler)
+            //이벤트 취소 removeEventLister('이벤트',함수명)
+            elem4.removeEventListener('click', handler)
+        </script>
+    </p>
+    <p><div>이벤트 객체 사용하기</div>
+        <input type="button" value="click5" id="elem5">
+        <script>
+            elem5.onclick = function (event){
+                alert(`${event.type}이벤트가 ${event.currentTarget.id}에서 발생했습니다.\n
+                이벤트가 발생한 곳은 ${event.clientX}, ${event.clientY}입니다.`)
+            }
+        </script>
+    </p>
+</body>
+</html>

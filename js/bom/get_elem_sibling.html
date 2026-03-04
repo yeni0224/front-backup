@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform">
+        <!--선택 시 focus 들어간다:text입력창에 텍스트 커서 활성화. (빠지면 block)-->
+        이름 : <input onfocus="showMessage(this, '이름을 입력하세요')" onblur="delMessage(this)"><span></span><br>
+        나이 : <input onfocus="showMessage(this, '나이를 입력하세요')" onblur="delMessage(this)"><span></span><br>
+        주소 : <input onfocus="showMessage(this, '주소를 입력하세요')" onblur="delMessage(this)"><span></span><br>
+    </form>
+    <script>
+        //형제 태그 찾기
+        //this :이벤트가 발생한 태그
+        function showMessage(input, msg) {
+            input.nextSibling.innerHTML = msg;
+            //input.nextSibling.nextSibling.innerHTML = msg;
+        }
+        function delMessage(input){
+             input.nextSibling.innerHTML = ''; //input바로 뒤 span 안의 내용 삭제
+        }
+    </script>
+</body>
+</html>

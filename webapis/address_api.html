@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <input type="text" id="postcode" placeholder="우편번호">
+    <input type="button" onclick="postcode()" value="우편번호 찾기"><br>
+    <input type="text" id="roadAddress" placeholder="도로명주소">
+    <input type="text" id="detailAddress" placeholder="상세주소">
+    <script src="//t1.kakaocdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script>
+        function postcode(){
+            new kakao.Postcode({
+            oncomplete: function(data) {
+                    document.querySelector('#postcode').value = data.zonecode;
+                    document.querySelector('#roadAddress').value = data.roadAddress;
+                }
+            }).open();
+        }
+    </script>
+</body>
+ 
+</html>

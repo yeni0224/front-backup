@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="myform">
+        <input type="text" id="target" name="text1">
+        <input type="submit" value="제출" onclick="process()">
+    </form>
+    <script>
+        function process(){
+            //id값으로 태그 찾기 : 1개의 문서에 id는 1개만
+            //만약 같은 id가 여러개 있다면 : 먼저 있는 태그 하나만 찾고 끝!
+            let value1 = document.getElementById("target").value;
+            let value2 = document.querySelector("#target").value; //css 셀렉터 사용
+
+            alert(`v1:${value1}, v2:${value2}`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let students = [{ id: 1, name:"kim", skill : ['js','java','python']},
+                    { id: 2, name:"an", skill : ['js','java']},
+                    { id: 3, name:"you", skill : ['js','python']}
+                    ];
+ 
+        //JSON문자열 변환
+        const jsonStr = JSON.stringify(students);
+        document.write(jsonStr);
+        document.write("<br><br>");
+        //js Object로 변환
+        const jsObj = JSON.parse(jsonStr);
+        //학생의 id와 이름, 언어 스킬 전부 출력하세요
+        jsObj.forEach(element => {
+            document.write(`${element.id}번 ${element.name}학생 <br>`)
+            document.write('언어스킬 :')
+            element.skill.forEach(s => {document.writeln(s)})
+            document.write('<hr>');
+        });
+ 
+    </script>  
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+ 
+<body><!-- onsubmit="return checkInput()" -->
+    <form name="form1" action="test.html" id="form1">
+        <label for="id">id</label>
+        <input id="id" placeholder="아이디를 입력하세요" name="id" ><br>
+        <label for="password">password</label>
+        <input id="password" name="password" type="password"><br>
+        <button type="submit">전송 버튼</button>
+    </form>
+    <script>
+        function checkInput() {
+            const form = document.form1;
+            if (!form.id.value.trim()) {
+                alert('id를 입력하세요');
+                form.id.focus();
+                return false;
+            }
+            if (!form.password.value.trim()) {
+                alert('password를 입력하세요');
+                form.password.focus();
+                return false;
+            }
+        }
+   
+        form1.addEventListener('submit', function(e){
+            let id = document.form1.id.value.trim();
+            let password = document.form1.password.value.trim();
+           
+            if(id === '' || password === ''){
+                alert('아이디나 비밀번호가 입력되지 않았습니다.')
+                e.preventDefault(); // submit의 기본 동작 취소
+            }else{
+                alert('입력 완료')
+            }
+           
+        });
+ 
+    </script>
+</body>
+ 
+</html> 

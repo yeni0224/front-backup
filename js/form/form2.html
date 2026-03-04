@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- submit : 1. onsubmit이벤트처리
+                2. 데이터 전송
+                3. action 요청 -->
+ 
+    <form name="myform" action="404.jsp" onsubmit="return beforeSubmit()">
+        이름: <input name="irum">
+        <input type="submit" value="submit">
+    </form>  
+    <script>
+        function beforeSubmit(){
+            return confirm("데이터를 보낼까요?");
+        }
+    </script>
+</body>
+</html>

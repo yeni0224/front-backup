@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<h2>JavaScript Web Workers API</h2>
+	<p>
+		Count numbers:
+		<output id="result"></output>
+	</p>
+	<button onclick="startWorker()">Start Worker</button>
+	<button onclick="stopWorker()">Stop Worker</button>
+	<button onclick="alert('작업중이지만 클릭 가능')">test</button>
+	<script>
+		let w; //back에서 동작할 woker 객체 저장할 변수
+
+		function startWorker() {
+			if (typeof (w) == "undefined") { //첫 woker 객체 생성
+				w = new Worker("demo_workers.js");
+				//백그라운드에서 독립적으로 수행. 
+			}
+			//메세지를 post하면 리스너(onmessage) 함수가 실행된다.
+			w.onmessage = function(event) {
+				document.getElementById("result").innerHTML = event.data;
+			};
+		}
+
+		function stopWorker() {
+			w.terminate(); // back에서 동작하는 worker 종료
+			w = undefined; // worker가 처음부터 다시 작업할 수 있도록 설정
+		}
+	</script>
+
+</body>
+</html>

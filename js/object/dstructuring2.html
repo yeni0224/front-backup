@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = ['test',10,true];
+        [t, ,b] = array; //빈 값으로도 채울 수 있다.
+        document.write(t+'<br>')
+        document.write(b+'<br>')
+        
+        document.write('<br>')
+        const obj = {item:'candy', q:10, status:{name:'abc', company:'sol'}, arr:[1, 2, 3]};
+        const {item, q, status:{name, company}, arr:[a1,b1,c1]} = obj;
+        document.write(q+'<br>')
+        document.write(name+'&nbsp'+company+'<br>')
+        document.write(a1+b1+c1+'<br>')        
+    </script>
+</body>
+</html>

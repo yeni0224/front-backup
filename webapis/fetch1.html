@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<div class="console" id="result"></div>
+	<script>
+		 function asynctest() {
+			 fetch('sample5_load.json')
+				.then(resp => resp.json())
+				.then(json => {
+					let emp = "";
+					json.employees.forEach((item) => {
+						emp += "<h2>" + item.firstName + "  " + item.lastName + "</h2>";
+					})//foreach
+					document.querySelector(".console").innerHTML = emp;
+				});
+		}
+		asynctest();
+		
+	</script>
+</body>
+
+</html>

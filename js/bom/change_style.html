@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/poodle.png" title="푸들" id="dog"><br>
+    <button id="toggle">토글 버튼</button>
+    <button id="hidden">요소 숨김</button>
+    <button id="visible">요소 표시</button>
+    <script>
+        function changeVisibility() {
+            let flag = document.querySelector('#dog').style.visibility;
+ 
+            if (flag == 'hidden') {document.querySelector('#dog').style.visibility = 'visible';} 
+            else {document.querySelector('#dog').style.visibility = 'hidden';}
+        }
+        toggle.addEventListener('click', changeVisibility)
+        hidden.onclick = () => {
+            document.querySelector('#dog').style.visibility = 'hidden';
+        }
+        visible.onclick = () => {
+            document.querySelector('#dog').style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>

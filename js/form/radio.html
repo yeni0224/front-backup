@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <form action="nothingcgi">
+      <h1>드라이브 선택</h1>
+      <p>
+        <input type="radio" name="drive" value="A" checked /> A 드라이브<br />
+        <input type="radio" name="drive" value="B" /> B 드라이브<br />
+        <input type="radio" name="drive" value="C" /> C 드라이브<br />
+        <input type="radio" name="drive" value="D" /> D 드라이브
+      </p>
+      <!-- this.form : 이벤트가 발생한 태그를 가지고 있는 form태그  -->
+      <input type="button" value="Check" onClick="findSelected(this.form)" />
+    </form>
+    <script>
+      //이름(name)이 같은 태그들은 name속성값을 배열 이름으로 해서 배열로 묶인다.
+      function findSelected(form) {
+        for (let i = 0; i < form.drive.length; i++) {
+          if (form.drive[i].checked == true) {
+            alert(form.drive[i].value + " 드라이브가 선택되었습니다.");
+            break;//1개만 선택할 수 있기 때문에 선택한 후 for문 탈출
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
+</body>
+</html>

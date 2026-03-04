@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+ 
+</head>
+ 
+<body>
+    <form name="cart">
+        전체선택/해제 <input type="checkbox" name="checkAll" onclick="chkBoxATB()">
+        <br><br>
+        <p>추천 메뉴</p>
+        <input name="cartGoodsDel" type="checkbox">짜장면<br>
+        <input name="cartGoodsDel" type="checkbox">짬뽕<br>
+        <input name="cartGoodsDel" type="checkbox">라면<br>
+        <input name="cartGoodsDel" type="checkbox">삼겹살<br>
+        <input name="cartGoodsDel" type="checkbox">족발<br>
+        <input name="cartGoodsDel" type="checkbox">냉면
+    </form>
+    <script>
+        function chkBoxATB() {
+            //전체선택/해제 체크박스를 눌렀을 때
+            let ch = document.cart.checkAll.checked;
+            //let ch_array = document.cart.cartGoodsDel; //배열일 때 ㄱㅊ
+            
+            //배열이 아닐 경우를 대비
+            let ch_arr = document.querySelectorAll('input[name="cartGoodsDel"]');
+            ch_arr.forEach(element => {
+                element.checked = ch;
+            });
+            //체크 -> name이 cartGoodsDel인 모든 체크박스 선택
+            //해제 -> name이 cartGoodsDel인 모든 체크박스 선택 취소
+        }
+    </script>
+</body>
+</html>
