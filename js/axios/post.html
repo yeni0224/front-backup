@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Axios POST 예제</title>
+</head>
+<body>
+  <h2>게시글 작성</h2>
+  <form id="postForm">
+    <input type="text" id="title" placeholder="제목" required /><br />
+    <textarea id="body" placeholder="내용" required></textarea><br />
+    <button type="submit">등록</button>
+  </form>
+  <pre id="result"></pre>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const form = document.getElementById("postForm");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById("title").value;
+      const body = document.getElementById("body").value;
+
+      axios.post("https://jsonplaceholder.typicode.com/posts", {
+        title: title,
+        body: body,
+        userId: 1
+      })
+      .then(response => {
+        result.textContent = JSON.stringify(response.data, null, 2);
+      })
+      .catch(error => {
+        result.textContent = "오류 발생: " + error;
+      });
+    });
+  </script>
+</body>
+</html>

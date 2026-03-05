@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- sample3.html의 전체 내용 출력 후
+     price 총합까지 출력-->
+    <div id="result"></div>
+    <p id="total"></p>
+    <script>
+        async function print(){
+            let response = await fetch('sample3.json');
+            let json = await response.json();
+
+            let result = '';
+            let total = 0;
+            for (let i of json.products){
+                result += `제품명 : ${i.name}, 가격 : ${i.price}<br>`;
+                total += i.price;
+            }
+            document.querySelector('#result').innerHTML = result;
+            document.querySelector('#total').innerHTML= `총 금액 : ${total}`
+        }
+        print()
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>Axios GET 예제</title>
+</head>
+<body>
+  <h2>사용자 목록</h2>
+  <button id="loadUsers">불러오기</button>
+  <ul id="userList"></ul>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const btn = document.getElementById("loadUsers");
+    const list = document.getElementById("userList");
+
+    btn.addEventListener("click", () => {
+      axios.get("https://jsonplaceholder.typicode.com/users")
+        .then(response => {
+          list.innerHTML = ""; // 초기화
+          response.data.forEach(user => {
+            const li = document.createElement("li");
+            li.textContent = user.name + " (" + user.email + ")";
+            list.appendChild(li);
+          });
+        })
+        .catch(error => {
+          alert("오류 발생: " + error);
+        });
+    });
+  </script>
+</body>
+</html>

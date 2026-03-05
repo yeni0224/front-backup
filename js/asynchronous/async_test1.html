@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("작업 완료!");
+  }, 1000);
+});
+ 
+promise.then(result => {
+  console.log(result); // 1초 뒤 "작업 완료!" 출력
+});
+ 
+</script>
+ 
+</body>
+</html>

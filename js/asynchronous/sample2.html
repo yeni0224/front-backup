@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--sample2.json에서 age가 30 이상인 user만 이름과 나이 출력-->
+    <div id="result"></div>
+    <script>
+        async function print() {
+            try{
+                let r = await fetch('sample2.json');
+                let j = await r.json();
+
+                let result = '';
+                for (let user of j.users){ //json 요소가 배열이기 때문에 for을 사용
+                    if(user.age >= 30){
+                        result += `이름 : ${user.name}, 나이 : ${user.age} <br>`;
+                    }
+                }
+                document.querySelector('#result').innerHTML = result;
+            } catch(error){document.querySelector('#result').innerHTML = err;}
+        }
+        print()
+    </script>
+</body>
+</html>

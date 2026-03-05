@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="console" id="result">
+        <p id="to"></p>
+        <p id="from"></p>
+    </div>
+    <script>
+        fetch("note.xml")
+            .then(res => res.text())                // 1. XML을 텍스트로 받기
+            .then(xmlText => {
+                const parser = new DOMParser();       // 2. 파서 생성
+                const xmlDoc = parser.parseFromString(xmlText, "application/xml"); // 3. 파싱
+ 
+                // 4. 원하는 데이터 추출
+                const to = xmlDoc.querySelector("to").textContent;
+                const from = xmlDoc.querySelector("from").textContent;
+                //받아온 데이터로 화면을 업데이트 하겠다.
+                document.querySelector("#to").innerHTML = "보낸 사람: " +to;
+                document.querySelector("#from").innerHTML = "받는 사람: "+from;
+            })
+            .catch(err => console.error("에러:", err));
+    </script>
+</body>
+</html>

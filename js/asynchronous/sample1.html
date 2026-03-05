@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- sample1.json데이터을 읽어와 
+     name / age / city 형태로 출력한다. 
+     단 구조 분해 사용할 것!!
+     -->
+     <div id="result"></div>
+    <script>
+        async function readJson(){
+            try{
+                let r = await fetch('sample1.json');
+                let j = await r.json();
+
+                let {name, age, city} = j
+                document.querySelector('#result').innerHTML = `${j.name} / ${j.age} / ${j.city}`;
+            }catch(error){document.querySelector('#result').innerHTML = error;}
+        }
+        readJson();
+    </script>
+</body>
+</html>
