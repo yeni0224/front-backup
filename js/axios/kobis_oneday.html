@@ -23,22 +23,23 @@
 			y.setDate(y.getDate() - 1); //어제 날짜 세팅
 			let str = y.getFullYear() + "-"
 				+ ("0" + (y.getMonth() + 1)).slice(-2) + "-"
-				+ ("0" + y.getDate()).slice(-2);
+				+ ("0" + y.getDate()).slice(-2); //date format으로 세팅
 			document.querySelector("#date").max = str;
 		}
-
+		//key 값은 query문자열로 보내겠다
 		let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key="+key;
 
 		mybtn.addEventListener("click", function () {
-			let d = document.querySelector("#date").value; // yyyy-MM-dd => yyyyMMdd
+			// yyyy-MM-dd => yyyyMMdd 정규 표현식으로 - 삭제
+			let d = document.querySelector("#date").value; 
 			const regex = /-/g;
 			let d_str = d.replace(regex, "");
 
 			axios.get(url + "&targetDt=" + d_str)
 				.then(function (response) {
-					let data = response.data;
+					let data = response.data; //json데이터 꺼냄 + js 객체로 변환
 					document.querySelector("#pdate").innerHTML = data.boxOfficeResult.showRange;
-					document.querySelector("#boxoffice div").innerHtml = "";
+					document.querySelector("#boxoffice > div").innerHTML = "";//기존 내용 지우며 초기화
 					//rank, movieNm, audiAcc, movieCd 
 					let movieList = data.boxOfficeResult.dailyBoxOfficeList;
 
@@ -47,51 +48,52 @@
 						p.setAttribute("id", movieList[i].movieCd);
 						p.textContent =	movieList[i].rank + "위 " + movieList[i].movieNm
 							+ " : " + movieList[i].audiAcc + "명"
-						document.querySelector("#boxoffice div").appendChild(p);//append
+						document.querySelector("#boxoffice > div").appendChild(p);//div 태그 안쪽에 append
 					}//for			
 				})
-
 		});	//click	
-
+	// id="boxoffice"인 요소에 클릭 이벤트를 등록하여 영화 상세정보를 불러옴
 	 document.getElementById("boxoffice").addEventListener("click", async function (e) {
-    const target = e.target;
+    const target = e.target; // [이벤트 객체 e] 클릭된 대상 요소를 가져옴
 
     // <p> 태그이면서 id 속성이 있는 경우만 처리
     if (target.tagName === "P" && target.id) {
-      // 기존 정보 제거
+      // 기존 정보 제거, 이미 붙어있는 <div>가 있으면 삭제
       const existingDiv = target.querySelector("div");
       if (existingDiv) existingDiv.remove();
-
+	
+	  // 기존 정보 제거, 이미 붙어있는 <div>가 있으면 삭제
       const movieCd = target.id;
+	  //json형식으로 데이터 요청하는 url
       const url = "https://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json";
       
       try {
-        const res = await axios.get(url, {
-          params: {
+        const res = await axios.get(url, { // [axios 요청] GET 방식으로 영화 상세정보 가져오기
+          params: { //get방식으로 보낼 때는 params로 보내기
             key: key,
             movieCd: movieCd
           }
         });
 
-        const m = res.data.movieInfoResult.movieInfo;
+        const m = res.data.movieInfoResult.movieInfo; // [응답 데이터 추출] 영화 정보 객체 꺼내기
         const minfo = `
-          <div>
+          <div> 
             영화제목: ${m.movieNm}<br>
             오픈날짜: ${m.openDt}<br>
             제작국가: ${m.nations[0]?.nationNm || "정보 없음"}<br>
             감독: ${m.directors[0]?.peopleNm || "정보 없음"}
             <hr>
-          </div>
-        `;
+          </div>`;//태그 객체가 있지 화면에 만들어진건 아님
 // HTML 문자열을 동적으로 삽입 - ("위치", 문자열)
 // "beforebegin"	기준 요소 바로 앞에 삽입	
 // "afterbegin"	기준 요소 첫 번째 자식으로 삽입
 // "beforeend"	기준 요소 마지막 자식으로 삽입	
 // "afterend"	기준 요소 바로 뒤에 삽입
 
-        target.insertAdjacentHTML("beforeend", minfo);
+        target.insertAdjacentHTML("beforeend", minfo); // [DOM 삽입] 클릭된 <p> 태그 내부에 생성한 HTML 추가
       } catch (err) {
         console.error("❌ 영화 정보를 가져오는 중 오류 발생:", err);
+		//insertAdjacentHTML → 클릭된 <p> 안에 영화 상세정보를 동적으로 삽입
         target.insertAdjacentHTML("beforeend", `<div>오류 발생: ${err.message}</div>`);
       }
     }
